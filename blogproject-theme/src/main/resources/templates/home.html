@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{ezytheme}">
+<body>
+<main>
+    <div layout:fragment="content" id="main-content">
+        <div th:replace="~{fragments/banner :: banner}"></div>
+        <div class="container-xl">
+            <div class="main-content mt-5">
+                <div class="row">
+                    <div class="col-lg-9">
+                        <div class="row">
+                            <th:block th:each="post, iterStat : ${postPagination.items}">
+                                <div th:if="${iterStat.index == 0}" class="col-lg-12">
+                                    <div class="fist-post-title text-center">
+                                        [[${post.title}]]
+                                        <div class="post-date">
+                                <span class="post-publishDate date-string">
+                                    [[${post.publishedAt}]]
+                                </span>
+                                        </div>
+                                    </div>
+                                    <img th:src="${post.image.getUrlOrNull()}" th:alt="${post.image.originalName}"
+                                         class="w-100">
+                                    <div class="fs-14px" th:utext="${post.description}"></div>
+                                    <a class="readmore" th:href="${'/posts/' + post.slug}">[[#{read_more}]]</a>
+                                    <div class="line-text">
+                                        <span class="text-in-line">[[#{hot_blog}]]</span>
+                                    </div>
+                                </div>
+                                <div th:if="${iterStat.index != 0}" class="col-lg-6 mt-5">
+                                    <div th:classappend="${iterStat.index % 2 != 0 ? 'pe-lg-2' : 'ps-lg-2'}">
+                                        <img th:src="${post.image.getUrlOrNull()}" th:alt="${post.image.originalName}">
+                                        <div class="post-title text-center" th:text="${post.title}">
+                                            <div class="post-date">
+                                <span class="post-publishDate date-string">
+                                    [[${post.publishedAt}]]
+                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="fs-14px" th:utext="${post.description}"></div>
+                                        <a class="readmore" th:href="${'/posts/' + post.slug}">[[#{read_more}]]</a>
+                                    </div>
+                                </div>
+                            </th:block>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div th:replace="~{fragments/sub-content :: content}"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<th:block layout:fragment="post-scripts">
+</th:block>
+</body>
+</html>

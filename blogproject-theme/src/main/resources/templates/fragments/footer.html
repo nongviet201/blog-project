@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<footer th:class="mt-5" th:fragment="footer" class="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <img class="logo" src="./images/logo.png" alt="logo">
+            </div>
+            <div class="col-lg-3">
+                <div>
+                    <p class="text-uppercase text-white fs-14px" >SUBSCRIBE TO NEW LETTER</p>
+                    <input class="email-input" id="input-email" type="email" name="EMAIL" placeholder="Your email address" required="">
+                    <button class="email-subscribe-btn" type="button" value="Subscribe">SUBSCRIBE</button>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div>
+                    <p class="fs-16px text-start text-uppercase text-white-50">
+                        recent post
+                    </p>
+                    <div class="p-2">Flex item 2</div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div>
+                    <p class="fs-16px text-start text-uppercase text-white-50">
+                        POPULAR POSTS
+                    </p>
+                    <div class="p-2">Flex item 2</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

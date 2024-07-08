@@ -1,0 +1,50 @@
+// css hình ảnh
+.sub-blog img {
+  width: 320px;
+}
+.sub-blog img {
+  width: 100%;
+}
+
+// css email
+.email-input{
+  height: 40px;
+  width: 100%;
+  text-align: center;
+}
+.email-subscribe-btn {
+  width: 100%;
+  height: 40px;
+}
+.subscribe-div {
+  background: #222;
+  color: #ccc;
+  margin-top: 40px;
+  padding: 20px;
+  clear: both;
+  width: 100%;
+  float: left;
+}
+
+//css follow me
+.social-sub-content {
+  margin-top: 40px;
+  box-sizing: border-box;
+  border: 1px solid #e1e1e1;
+  padding: 20px;
+  text-align: center;
+}
+
+//css banner ads
+.banner-ads {
+  margin-top: 40px;
+  object-fit: cover;
+}
+.banner-ads img {
+  width: 100%;
+}
+
+//css category card
+#category-card {
+  margin-top: 40px;
+}
