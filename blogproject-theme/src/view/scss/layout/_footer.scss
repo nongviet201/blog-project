@@ -31,16 +31,38 @@
 }
 
 footer {
-    font-family: lato;
+    background-color: #222;
+    padding: 50px 0;
     font-weight: 600;
 }
 
-#input-email {
-    height: 45px;
-    width: 85%;
-    font-size: 14px;
+.footer-title {
+    font-size: 16px;
+    text-align: start;
+    text-transform: uppercase;
+    color: #999;
+    font-weight: 400;
+    letter-spacing: 1px;
 }
 
-#footer-content button{
-    width: 85%;
+footer .logo {
+    height: 100px;
+}
+
+footer .subscription {
+    padding-right: 50px;
+}
+
+.subscription .email-input {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.subscription .email-subscribe-btn {
+    background-color: #888888;
+    border: none;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 1px;
 }

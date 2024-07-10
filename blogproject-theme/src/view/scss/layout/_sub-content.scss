@@ -6,6 +6,10 @@
   width: 100%;
 }
 
+.card-body img{
+  height: 40px;
+}
+
 // css email
 .email-input{
   height: 40px;
@@ -16,14 +20,23 @@
   width: 100%;
   height: 40px;
 }
-.subscribe-div {
+.subscribe {
   background: #222;
   color: #ccc;
   margin-top: 40px;
   padding: 20px;
-  clear: both;
   width: 100%;
-  float: left;
+}
+.subscribe .email-input {
+  font-size: 15px;
+}
+.subscribe .email-subscribe-btn {
+  background-color: #888888;
+  border: none;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 //css follow me
@@ -47,4 +60,28 @@
 //css category card
 #category-card {
   margin-top: 40px;
+}
+
+//css about me
+.about-me {
+  border: 1px solid #e1e1e1;
+  padding: 15px;
+  text-align: center;
+}
+
+.about-me .card-body {
+  margin-top: 10px;
+}
+
+//css
+.social-sub-content {
+  margin-top: 40px;
+}
+
+.sub-title {
+  text-align: center;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 1px;
 }

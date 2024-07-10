@@ -18,6 +18,7 @@ a {text-decoration: none}
   font-family: 'Lustria', sans-serif;
   font-size: 20px;
   margin-bottom: 0;
+  letter-spacing: 2px;
 }
 
 
@@ -44,13 +45,9 @@ a {text-decoration: none}
   font-style: italic;
 }
 
-
 // css hình ảnh
 .main-blog img {
   width: 100%;
-}
-.card-body img{
-  height: 40px;
 }
 
 // css read more
@@ -66,3 +63,8 @@ a {text-decoration: none}
 
 
 //css
+.sub-post-index img {
+  height: 320px;
+  width: 100%;
+  object-fit: cover;
+}
