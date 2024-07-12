@@ -19,7 +19,9 @@
             </a>
         </div>
         <div>
-            <img class="logo" src="https://themes-themegoods.b-cdn.net/letsblog/demo/wp-content/themes/letsblog/images/logo@2x.png">
+            <a href="/">
+                <img class="logo" src="https://themes-themegoods.b-cdn.net/letsblog/demo/wp-content/themes/letsblog/images/logo@2x.png">
+            </a>
         </div>
         <div class="util-menu me-7">
             <a>
@@ -33,14 +35,17 @@
     <div class="menu-item border-top">
         <div class="item">
             <ul>
-                <li th:each="mainMenuItem : ${mainMenuItems}" >
-                    [[${mainMenuItem.linkText}]]
+                <li th:each="mainMenuItem : ${mainMenuItems}">
+                    <a th:href="${mainMenuItem.customLink}">
+                        [[${mainMenuItem.linkText}]]
+                    </a>
                 </li>
             </ul>
         </div>
     </div>
 </div>
 <script th:fragment="scripts" type="text/javascript">
+
 </script>
 </body>
 </html>

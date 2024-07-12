@@ -6,9 +6,9 @@ import org.youngmonkeys.ezyplatform.model.MediaNameModel;
 
 @Getter
 @Builder
-public class WebHighlightPostResponse {
-    private final String postSlug;
-    private final MediaNameModel image;
+public class WebCustomPostResponse {
     private final String title;
-    private final long publishedAt;
+    private final String slug;
+    private final long publishedDate;
+    private final MediaNameModel img;
 }

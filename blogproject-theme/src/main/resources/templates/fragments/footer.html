@@ -6,29 +6,49 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-3">
-                <img class="logo" src="https://themes-themegoods.b-cdn.net/letsblog/demo/wp-content/themes/letsblog/images/logo@2x_white.png">
+                <a href="/">
+                    <img class="logo"
+                         src="https://themes-themegoods.b-cdn.net/letsblog/demo/wp-content/themes/letsblog/images/logo@2x_white.png">
+                </a>
             </div>
             <div class="col-lg-3">
                 <div class="subscription">
-                    <p class="footer-title" >[[#{subscription}]]</p>
-                    <input class="email-input" id="input-email" type="email" name="EMAIL" placeholder="Your email address" required="">
-                    <button class="email-subscribe-btn text-uppercase" type="button" value="Subscribe">[[#{subscribe}]]</button>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div >
-                    <p class="footer-title">
-                        [[#{recent_post}]]
-                    </p>
-                    <div class="p-2">Flex item 2</div>
+                    <p class="footer-title">[[#{subscription}]]</p>
+                    <input class="email-input" id="input-email" type="email" name="EMAIL"
+                           placeholder="Your email address" required="">
+                    <button class="email-subscribe-btn text-uppercase" type="button" value="Subscribe">
+                        [[#{subscribe}]]
+                    </button>
                 </div>
             </div>
             <div class="col-lg-3">
                 <div>
                     <p class="footer-title">
-                        [[#{popular-post}]]
+                        [[#{recent_posts}]]
                     </p>
-                    <div class="p-2">Flex item 2</div>
+                    <div class="footer-item">
+                        <ul>
+                            <li class="footer-post-title mt-3" th:each="recentPost : ${recentPosts}">
+                                <a class="text-white" th:href="${'/post/' + recentPost.slug}">[[${recentPost.title}]]</a>
+                                <div class="text-white-50 post-publishDate date-string mt-1 fs-12px fw-400">[[${recentPost.publishedDate}]]</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div>
+                    <p class="footer-title">
+                        [[#{popular-posts}]]
+                    </p>
+                    <div class="footer-item">
+                        <ul>
+                            <li class="footer-post-title mt-3" th:each="popularPost : ${popularPosts}">
+                                <a class="text-white" href="">[[${popularPost.title}]]</a>
+                                <div class="text-white-50 post-publishDate date-string mt-1 fs-14px fw-400">[[${popularPost.publishedDate}]]</div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

@@ -2,7 +2,10 @@
   padding: 10px;
 }
 
-a {text-decoration: none}
+a {
+  text-decoration: none;
+  color: black;
+}
 
 
 // css tiêu đề
@@ -43,6 +46,7 @@ a {text-decoration: none}
   font-family: 'Lustria', Times, serif;
   font-size: 14px;
   font-style: italic;
+  letter-spacing: 1px;
 }
 
 // css hình ảnh
@@ -67,4 +71,24 @@ a {text-decoration: none}
   height: 320px;
   width: 100%;
   object-fit: cover;
+}
+
+// css Hot blog
+.hot-blog-line{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hot-blog-line::before,
+.hot-blog-line::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #e1e1e1;
+  margin: 0 10px;
+}
+
+.hot-blog {
+  font-size: 14px;
+  letter-spacing: 1px;
 }

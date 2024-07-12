@@ -1,3 +1,8 @@
+.sub-content {
+  font-family: lato, serif;
+  font-weight: 400;
+}
+
 // css hình ảnh
 .sub-blog img {
   width: 320px;
@@ -80,8 +85,8 @@
 
 .sub-title {
   text-align: center;
-  font-size: 15px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  font-weight: 400;
-  letter-spacing: 1px;
 }

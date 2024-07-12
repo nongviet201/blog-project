@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-
 <html xmlns:th="http://www.thymeleaf.org">
 <body>
-<div  th:fragment="content" class="sub-content">
+<div th:fragment="content" class="sub-content">
     <div class="about-me">
         <p class="sub-title">[[#{about_me}]]</p>
         <img src="https://themes-themegoods.b-cdn.net/letsblog/demo/wp-content/uploads/2015/07/photography_2.jpg" class="card-img-top" alt="...">
@@ -41,8 +40,9 @@
     <div id="category-card" class="border mt-7 p-4">
         <p class="sub-title" >[[#{categories}]]</p>
         <ul class="list-unstyled">
-            <li class="border-bottom" th:each="categoryMenuItem : ${categoryMenuItems}" >
-                <p class="text-start text-capitalize fs-14px ">Art</p>
+            <li th:each="categoryMenuItem, iterStat : ${categoryMenuItems}">
+                <div class="text-start text-capitalize fs-14px mb-2 ">[[${categoryMenuItem.name}]]</div>
+                <div th:if="${!iterStat.last}" class="border-bottom mb-3"></div>
             </li>
         </ul>
     </div>

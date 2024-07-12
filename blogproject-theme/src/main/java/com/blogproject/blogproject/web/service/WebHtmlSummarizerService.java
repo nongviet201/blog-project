@@ -23,7 +23,7 @@ public class WebHtmlSummarizerService {
         String summary = text.substring(0, maxLength);
 
         // Optionally, you can add "..." to indicate that the text is truncated
-        summary += "...";
+        summary += " ...";
 
         return summary;
     }

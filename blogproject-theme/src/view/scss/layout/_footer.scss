@@ -34,15 +34,16 @@ footer {
     background-color: #222;
     padding: 50px 0;
     font-weight: 600;
+    font-family: lato, serif;
 }
 
 .footer-title {
-    font-size: 16px;
+    font-size: 14px;
     text-align: start;
     text-transform: uppercase;
     color: #999;
-    font-weight: 400;
-    letter-spacing: 1px;
+    font-weight: 600;
+    letter-spacing: 2px;
 }
 
 footer .logo {
@@ -64,5 +65,20 @@ footer .subscription {
     color: #ffffff;
     font-size: 14px;
     font-weight: 400;
+    letter-spacing: 1px;
+}
+.footer-item ul {
+    list-style-type: none;
+    margin:0;
+    padding: 0;
+}
+
+.footer-post-title a{
+    font-family: "Lustria", sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.footer-post-title div{
     letter-spacing: 1px;
 }
