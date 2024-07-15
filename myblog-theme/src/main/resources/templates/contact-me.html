@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{ezytheme}">
+<body>
+<div layout:fragment="content" id="main-content">
+    <div th:replace="~{fragments/banner :: banner}"></div>
+    <div class="contact-me container">
+        <div class="main-content mt-5">
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="contact-me-title" style="letter-spacing: 3px">
+                        <div class="text-uppercase text-center fw-600">
+                            <h1 >[[#{contact_me}]]</h1>
+                            <span>[[#{lets_get_in_touch}]]</span>
+                        </div>
+                    </div>
+                    <div class="my-7 fw-400 fs-18px">
+                        <p>
+                            We'd love to hear from you! Whether you have a question, comment, or suggestion, we're happy to chat. Feel free to fill out the form below and we'll get back to you as soon as possible.
+                        </p>
+                    </div>
+                    <div>
+                        <form class="contact-form">
+                            <label for="your_name" class="text-uppercase fw-600">[[#{name}]]</label>
+                            <input id="your_name" name="your_name" type="text" class="required_field" style="width:100%">
+                            <br>
+                            <label for="email" class="text-uppercase fw-600">[[#{email}]]</label>
+                            <input id="email" name="email" type="text" class="required_field email" style="width:100%">
+                            <br>
+                            <label for="message" class="text-uppercase fw-600">[[#{message}]]</label>
+                            <textarea id="message" name="message" rows="7" cols="10" class="required_field" style="width:100%"></textarea>
+                            <br>
+                            <p>
+                                <input id="contact_submit_btn" type="submit" value="Submit Form">
+                            </p>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div th:replace="~{fragments/sub-content :: content}"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
