@@ -1,0 +1,117 @@
+/*
+ * Copyright 2024 youngmonkeys.org
+ * 
+ * Licensed under the ezyplatform, Version 1.0.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *     https://youngmonkeys.org/licenses/ezyplatform-1.0.0.txt
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+*/
+
+.main-menu {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+}
+
+.header .logo {
+  height: 150px;
+  margin-right: 5%;
+}
+.header {
+  font-size: 20px;
+}
+.header .menu-item {
+  height: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-evenly;
+  font-family: lato, serif;
+  font-weight: 600;
+}
+
+.menu-item .item {
+  height: 100%;
+}
+
+.header .menu-item ul {
+  list-style: none;
+  margin: 0;
+  display: flex;
+  height: 100%;
+
+}
+.header .menu-item .item ul li {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin: 0 20px;
+  align-content: center;
+}
+
+.menu-with-submenu {
+  height: 100%;
+  display: flex;
+  align-content: center;
+}
+
+.social-menu {
+  display: flex;
+  gap: 20px;
+}
+.util-menu {
+  display: flex;
+  gap: 20px;
+}
+
+
+// Menu + Submenu
+.menu-with-submenu {
+  position: relative;
+  display: inline-block;
+}
+
+.menu-with-submenu .submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.menu-with-submenu:hover .submenu {
+  display: block;
+}
+
+.menu-with-submenu .submenu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  flex-direction: column;
+}
+
+.menu-with-submenu .submenu ul li {
+  margin: 0 !important;
+  padding: 0 20px !important;
+}
+
+.menu-with-submenu .submenu ul li a {
+  display: block;
+  color: #333;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.menu-with-submenu .submenu li:hover {
+  background-color: #ddd;
+}

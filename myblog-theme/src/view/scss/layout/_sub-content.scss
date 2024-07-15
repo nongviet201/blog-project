@@ -1,0 +1,92 @@
+.sub-content {
+  font-family: lato, serif;
+  font-weight: 400;
+}
+
+// css hình ảnh
+.sub-blog img {
+  width: 320px;
+}
+.sub-blog img {
+  width: 100%;
+}
+
+.card-body img{
+  height: 40px;
+}
+
+// css email
+.email-input{
+  height: 40px;
+  width: 100%;
+  text-align: center;
+}
+.email-subscribe-btn {
+  width: 100%;
+  height: 40px;
+}
+.subscribe {
+  background: #222;
+  color: #ccc;
+  margin-top: 40px;
+  padding: 20px;
+  width: 100%;
+}
+.subscribe .email-input {
+  font-size: 15px;
+}
+.subscribe .email-subscribe-btn {
+  background-color: #888888;
+  border: none;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+//css follow me
+.social-sub-content {
+  margin-top: 40px;
+  box-sizing: border-box;
+  border: 1px solid #e1e1e1;
+  padding: 20px;
+  text-align: center;
+}
+
+//css banner ads
+.banner-ads {
+  margin-top: 40px;
+  object-fit: cover;
+}
+.banner-ads img {
+  width: 100%;
+}
+
+//css category card
+#category-card {
+  margin-top: 40px;
+}
+
+//css about me
+.about-me {
+  border: 1px solid #e1e1e1;
+  padding: 15px;
+  text-align: center;
+}
+
+.about-me .card-body {
+  margin-top: 10px;
+}
+
+//css
+.social-sub-content {
+  margin-top: 40px;
+}
+
+.sub-title {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}

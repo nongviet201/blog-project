@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="header" class="content">
+    <div class="main-menu">
+        <div class="social-menu ms-7">
+            <a>
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a>
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a>
+                <i class="fa-brands fa-pinterest"></i>
+            </a>
+            <a>
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+        </div>
+        <div>
+            <a href="/">
+                <img class="logo" src="https://themes-themegoods.b-cdn.net/letsblog/demo/wp-content/themes/letsblog/images/logo@2x.png">
+            </a>
+        </div>
+        <div class="util-menu me-7">
+            <a>
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </a>
+            <a>
+                <i class="fa-solid fa-bars"></i>
+            </a>
+        </div>
+    </div>
+    <div class="menu-item border-top border-bottom">
+        <div class="item">
+            <ul>
+                <li th:each="mainMenuItem : ${mainMenuItems}">
+                    <div th:if="${mainMenuItem.linkText eq 'category'}" class="menu-with-submenu">
+                        <div>
+                            [[${mainMenuItem.linkText}]]
+                            <span><i class="fa-solid fa-chevron-down fa-2xs"></i></span>
+                        </div>
+                        <div class="submenu">
+                            <ul>
+                                <li th:each="categoryMenuItem : ${categoryMenuItems}">
+                                    <a th:href="${'/category/' + categoryMenuItem.name}">
+                                        [[${categoryMenuItem.name}]]
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a th:href="${mainMenuItem.customLink}">
+                        <span th:if="${mainMenuItem.linkText != 'category'}" th:text="${mainMenuItem.linkText}">
+                        [[${mainMenuItem.linkText}]]
+                    </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script th:fragment="scripts" type="text/javascript">
+
+</script>
+</body>
+</html>

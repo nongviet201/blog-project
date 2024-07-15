@@ -1,0 +1,48 @@
+#content {
+  font-family: lato, sans-serif;
+}
+
+a:hover {
+  color: #b38d51 !important;
+}
+
+#body-content {
+  margin: 0 176px;
+}
+
+body {
+  font-family: lato, sans-serif;
+}
+
+.blog-title {
+  font-size: 17px;
+  text-align: center;
+}
+
+.pt-serif-regular {
+  font-family: "PT Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+// css dòng kẻ cho chữ
+.line-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.post-date::before,
+.post-date::after {
+  flex: 1;
+  border-bottom: 1px solid #d4b48b;
+  margin: 0 10px;
+}
+
+.post-publishDate {
+  color: #d4b48b;
+  font-family: 'Lustria', Times, serif;
+  font-size: 14px;
+  font-style: italic;
+}
+
