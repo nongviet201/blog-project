@@ -13,17 +13,17 @@
             
     </parent>
         
-    <artifactId>blogproject</artifactId>
+    <artifactId>myblog</artifactId>
         
-    <groupId>com.blogproject</groupId>
+    <groupId>com.viet</groupId>
         
     <version>1.0.0</version>
         
     <packaging>pom</packaging>
         
-    <name>blogproject</name>
+    <name>myblog</name>
         
-    <description>Blogproject</description>
+    <description>myblog</description>
         
     <properties>
                 
@@ -37,13 +37,13 @@
         
     <modules>
                 
-        <module>blogproject-sdk</module>
+        <module>myblog-sdk</module>
                 
-        <module>blogproject-theme</module>
+        <module>myblog-theme</module>
                 
-        <module>blogproject-admin-plugin</module>
+        <module>myblog-admin-plugin</module>
                 
-        <module>blogproject-web-plugin</module>
+        <module>myblog-web-plugin</module>
             
     </modules>
         
