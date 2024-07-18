@@ -1,0 +1,21 @@
+.search-form-wrapper {
+  padding: 30px;
+  border: 1px #ccc solid;
+  #search-input {
+    width: 100%;
+  }
+}
+input {
+  padding: 10px;
+  font-weight: 300;
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid black;
+  background: #f9f9f9;
+}
+
+#search {
+  width: 100%;
+}

@@ -3,66 +3,165 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <body>
 <div th:fragment="header" class="content">
-    <div class="main-menu">
-        <div class="social-menu ms-7">
-            <a>
-                <i class="fa-brands fa-facebook-f"></i>
-            </a>
-            <a>
-                <i class="fa-brands fa-twitter"></i>
-            </a>
-            <a>
-                <i class="fa-brands fa-pinterest"></i>
-            </a>
-            <a>
-                <i class="fa-brands fa-instagram"></i>
-            </a>
+    <header>
+        <div class="main-menu">
+            <div class="social-menu ms-7">
+                <a>
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a>
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+                <a>
+                    <i class="fa-brands fa-pinterest"></i>
+                </a>
+                <a>
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>
+            <div>
+                <a href="/">
+                    <img class="logo"
+                         src="https://themes-themegoods.b-cdn.net/letsblog/demo/wp-content/themes/letsblog/images/logo@2x.png">
+                </a>
+            </div>
+            <div class="util-menu me-7">
+                <button class="ms-2 h-auto border-0 bg-white" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                    <i class="fa-solid fa-magnifying-glass me-3"></i>
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
         </div>
-        <div>
-            <a href="/">
-                <img class="logo" src="https://themes-themegoods.b-cdn.net/letsblog/demo/wp-content/themes/letsblog/images/logo@2x.png">
-            </a>
-        </div>
-        <div class="util-menu me-7">
-            <a>
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </a>
-            <a>
-                <i class="fa-solid fa-bars"></i>
-            </a>
-        </div>
-    </div>
-    <div class="menu-item border-top border-bottom">
-        <div class="item">
-            <ul>
-                <li th:each="mainMenuItem : ${mainMenuItems}">
-                    <div th:if="${mainMenuItem.linkText eq 'category'}" class="menu-with-submenu">
-                        <div>
-                            [[${mainMenuItem.linkText}]]
-                            <span><i class="fa-solid fa-chevron-down fa-2xs"></i></span>
-                        </div>
-                        <div class="submenu">
-                            <ul>
-                                <li th:each="categoryMenuItem : ${categoryMenuItems}">
-                                    <a th:href="${'/category/' + categoryMenuItem.name}">
-                                        [[${categoryMenuItem.name}]]
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+        <div class="offcanvas offcanvas-end p-5" tabindex="-1" id="offcanvasRight"
+             aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+                <form role="search" method="get" name="searchForm" id="search-form" action="">
+                    <div>
+                        <input id="search-input" type="text" placeholder="Search..." autocomplete="off">
+                        <button id="search-btn">
+                            <i class="fa fa-search"></i>
+                        </button>
                     </div>
-                    <a th:href="${mainMenuItem.customLink}">
+                    <div class="auto-complete"></div>
+                </form>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div id="offcanvas-menu">
+                    <ul>
+                        <li th:each="mainMenuItem : ${mainMenuItems}">
+                            <th:block th:if="${mainMenuItem.linkText eq 'category'}">
+                            <a id="menu-item-has-children">
+                                [[${mainMenuItem.linkText}]] <i class="fa-solid fa-chevron-right fa-xs"></i>
+                            </a>
+                            </th:block>
+                            <a th:if="${mainMenuItem.linkText != 'category'}" th:href="${mainMenuItem.customLink}">
+                            <span>
+                                [[${mainMenuItem.linkText}]]
+                            </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="menu-children" class="d-none">
+                    <div class="mb-3">
+                        <a id="menu-children-back" class="fs-14px fw-400" style="letter-spacing: 1px; color: #666;">
+                            <i class="fa-solid fa-chevron-left fa-xs"></i>
+                            <span>[[#{back}]]</span>
+                        </a>
+                    </div>
+                    <ul>
+                        <li th:each="categoryMenuItem : ${categoryMenuItems}">
+                            <a th:href="${'/category/' + categoryMenuItem.name}">
+                                [[${categoryMenuItem.name}]]
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="about-me mt-5">
+                    <p class="sub-title">[[#{about_me}]]</p>
+                    <img src="https://themes-themegoods.b-cdn.net/letsblog/demo/wp-content/uploads/2015/07/photography_2.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">
+                            Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus.
+                        </p>
+                        <img src="https://themes-themegoods.b-cdn.net/letsblog/demo/wp-content/uploads/2015/07/signature.png" alt="">
+                    </div>
+                </div>
+                <div class="social-sub-content">
+                    <div class="sub-title">[[#{follow_me_on}]]</div>
+                    <ul class="list-unstyled d-flex justify-content-center mt-3 mb-0">
+                        <li class="me-3 fs-14px"><a href=""><i class="fa-brands text-black fa-facebook-f fa-lg"></i></a></li>
+                        <li class="me-3 fs-14px"><a href=""><i class="fa-brands text-black fa-twitter fa-lg"></i></a></li>
+                        <li class="me-3 fs-14px"><a href=""><i class="fa-brands text-black fa-tiktok fa-lg"></i></a></li>
+                        <li class="fs-14px"><a href=""><i class="fa-brands text-black fa-instagram fa-lg"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="menu-item border-top border-bottom">
+            <div class="item">
+                <ul>
+                    <li th:each="mainMenuItem : ${mainMenuItems}">
+                        <div th:if="${mainMenuItem.linkText eq 'category'}" class="menu-with-submenu">
+                            <div>
+                                [[${mainMenuItem.linkText}]]
+                                <span><i class="fa-solid fa-chevron-down fa-2xs"></i></span>
+                            </div>
+                            <div class="submenu">
+                                <ul>
+                                    <li th:each="categoryMenuItem : ${categoryMenuItems}">
+                                        <a th:href="${'/category/' + categoryMenuItem.name}">
+                                            [[${categoryMenuItem.name}]]
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a th:href="${mainMenuItem.customLink}">
                         <span th:if="${mainMenuItem.linkText != 'category'}" th:text="${mainMenuItem.linkText}">
                         [[${mainMenuItem.linkText}]]
                     </span>
-                    </a>
-                </li>
-            </ul>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
+    </header>
 </div>
 <script th:fragment="scripts" type="text/javascript">
+    const offcavasMenu = document.getElementById("offcanvas-menu");
+    const menuChildern = document.getElementById("menu-children");
+    const menuItemHasChildren = document.getElementById("menu-item-has-children");
+    const menuChildernBack = document.getElementById("menu-children-back");
 
+    menuItemHasChildren.addEventListener("click", (event) => {
+        event.preventDefault();
+        offcavasMenu.classList.add("d-none");
+        offcavasMenu.classList.toggle("hidden");
+        offcavasMenu.classList.remove("d-block");
+        menuChildern.classList.remove("d-none");
+        menuItemHasChildren.classList.add("d-block");
+        menuItemHasChildren.classList.add("show");
+    })
+
+    menuChildernBack.addEventListener("click", (event) => {
+        offcavasMenu.classList.remove("d-none");
+        offcavasMenu.classList.add("d-block");
+        menuChildern.classList.add("d-none");
+        menuItemHasChildren.classList.remove("d-block");
+    });
+
+
+    const searchBtn = document.getElementById("search-btn");
+
+    searchBtn.addEventListener("click", (e) => {
+        e.preventDefault()
+        const value = document.getElementById("search-input").value;
+        console.log(value)
+        window.location.href = '/posts/search?keyword=' + encodeURIComponent(value);
+    })
 </script>
 </body>
 </html>

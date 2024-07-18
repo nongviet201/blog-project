@@ -18,15 +18,11 @@ public class WebBlogMenuItemService {
 
     public List<MenuItemModel> getMaiMenuItems() {
         Menu menu = menuRepository.findByField("name", "main");
-        return menuItemService.getMenuItemsByMenuId(
-                menu.getId()
-        );
+        return menuItemService.getMenuItemsByMenuId(menu.getId());
     }
 
     public List<MenuItemModel> getCategoriesMenuItems() {
         Menu menu = menuRepository.findByField("name", "category");
-        return menuItemService.getMenuItemsByMenuId(
-                menu.getId()
-        );
+        return menuItemService.getMenuItemsByMenuId(menu.getId());
     }
 }

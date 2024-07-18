@@ -68,7 +68,6 @@
   gap: 20px;
 }
 .util-menu {
-  display: flex;
   gap: 20px;
 }
 
@@ -115,3 +114,60 @@
 .menu-with-submenu .submenu li:hover {
   background-color: #ddd;
 }
+
+
+// css search bar
+.offcanvas {
+  font-family: lato, sans-serif;
+}
+
+.offcanvas-header {
+  margin: 15px 0;
+}
+
+#search-form div {
+  color: black;
+  background-color: #ebebeb;
+  font-size: 14px;
+    input {
+      background: transparent;
+      width: 200px;
+      border: 0;
+      margin: 0;
+      display: inline-block;
+      color: black;
+      padding: 10px;
+    } input:focus {
+        outline: none;
+      }
+    button {
+      background: transparent;
+      display: inline-block;
+      border: 0;
+      width: 50px;
+      color: grey;
+      font-size: 13px;
+      opacity: .5;
+    }
+}
+
+.offcanvas-body {
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 15px;
+      letter-spacing: 2px;
+      margin-bottom: 17px;
+      a {
+        color: #666666;
+      }
+    }
+  }
+  .card-text{
+    font-size: 14px;
+  }
+}
+

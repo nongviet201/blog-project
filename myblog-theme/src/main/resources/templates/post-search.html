@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{ezytheme}">
+<body>
+<main>
+    <div layout:fragment="content" id="main-content">
+        <div th:replace="~{fragments/banner :: banner}"></div>
+        <div class="container">
+            <div class="main-content mt-5">
+                <div class="row">
+                    <div class="col-lg-9 pe-4">
+                        <div class="search-form-wrapper">
+                            <p class="fs-14px fw-300">
+                                [[#{search_results_for}]]
+                                <strong class="fs-18px">[[${keyword}]].</strong>
+                                [[#{If_you_did_not_find_what_you_were_looking_for_try_a_new_search}]].
+                            </p>
+                            <input class="p-2" id="search" type="text" onkeydown="handleKeyDown(event)">
+                        </div>
+                        <div class="mt-5">
+                            <th:block th:if="${postPagination.items.size} == 1">
+                                <div class="pb-5 mt-5 border-bottom d-flex"
+                                     th:each="post : ${postPagination.items}">
+                                    <div style=" height: 168px; width: 262px">
+                                        <a th:href="${'/post/' + post.slug}">
+                                            <img th:src="${post.image.getUrlOrNull()}"
+                                                 th:alt="${post.image.originalName}">
+                                        </a>
+                                    </div>
+                                    <div class="ms-5">
+                                        <div class="fist-post-title">
+                                            <a th:href="${'/post/' + post.slug}">
+                                                [[${post.title}]]
+                                            </a>
+                                        </div>
+                                        <span class="post-publishDate date-string">
+                                                [[${post.publishedAt}]]
+                                        </span>
+                                    </div>
+                                </div>
+                            </th:block>
+                            <th:block th:if="${postPagination.items.size} > 1">
+                                <div class="pb-5 mt-5 border-bottom" th:each="post : ${postPagination.items}">
+                                    <a th:href="${'/post/' + post.slug}">
+                                        <div class="fist-post-title">[[${post.title}]]</div>
+                                        <span class="post-publishDate date-string">
+                                    [[${post.publishedAt}]]
+                                </span>
+                                    </a>
+                                </div>
+                            </th:block>
+                            <th:block th:if="${postPagination.items.size} < 1">
+                                <div class="pb-5 mt-5 border-bottom d-flex">
+                                    [[#{keyword_not_found}]]
+                                </div>
+                            </th:block>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div th:replace="~{fragments/sub-content :: content}"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<th:block layout:fragment="post-scripts">
+    <script>
+        const handleKeyDown = (e) => {
+            if (e.keyCode === 13) {
+                const value = document.getElementById("search").value;
+                console.log(value)
+                if (value.length > 0) {
+                    window.location.href = '/posts/search?keyword=' + encodeURIComponent(value);
+                } else {
+                    window.location.href = '/posts/search?keyword=';
+                }
+            }
+        }
+
+    </script>
+</th:block>
+</body>
+</html>

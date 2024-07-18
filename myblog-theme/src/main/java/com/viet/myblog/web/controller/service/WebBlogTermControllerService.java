@@ -1,7 +1,7 @@
 package com.viet.myblog.web.controller.service;
 
-import com.viet.myblog.web.service.WebBlogTermService;
 import com.tvd12.ezyhttp.server.core.annotation.Service;
+import com.viet.myblog.web.service.WebBlogTermService;
 import lombok.AllArgsConstructor;
 import org.youngmonkeys.ezyarticle.sdk.entity.TermType;
 import org.youngmonkeys.ezyarticle.sdk.model.TermModel;
