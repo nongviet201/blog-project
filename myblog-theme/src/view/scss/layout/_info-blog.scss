@@ -49,4 +49,26 @@
 
 .post-content {
   margin-right: 10px ;
+  img {
+    width: 100%;
+    height: auto;
+  }
 }
+
+@media (max-width: 768px) {
+  .hot-blog-div {
+    img {
+      height: 100px !important;
+      width: 100% !important;
+    }
+  }
+}
+@media (max-width: 426px) {
+  .hot-blog-div {
+    img {
+      height: auto !important;
+      width: 100% !important;
+    }
+  }
+}
+

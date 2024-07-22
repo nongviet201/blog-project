@@ -10,8 +10,8 @@
     <div class="container">
         <div class="main-content mt-5">
             <div class="row">
-                <div class="col-lg-9 pe-4">
-                    <div class="fist-post-title text-center">
+                <div class="col-lg-9 col-md-8 pe-md-3 px-5 p-md-0">
+                    <div class="fist-post-title fs-md-24px text-center">
                         [[${post.title}]]
                         <div class="post-date">
                             <span class="post-publishDate date-string">
@@ -50,14 +50,14 @@
                         </div>
                         <div class="hot-blog-div">
                             <div class="row">
-                                <div class="col-lg-4" th:each="recentPost : ${recentPosts}">
+                                <div class="col-lg-4 col-md-4" th:each="recentPost : ${recentPosts}">
                                     <div>
                                         <img class="mt-3 w-100 object-fit-cover" style="height: 235px"
                                              th:src="${recentPost.img.getUrlOrNull()}"
                                              th:alt="${recentPost.img.originalName}">
                                         <div class="mt-4">
-                                            <a href="">[[${recentPost.title}]]</a>
-                                            <div class="text-black-50 post-publishDate date-string mt-1 fs-14px fw-400">
+                                            <a class="fs-md-12px" th:href="${'/post/' + recentPost.slug}">[[${recentPost.title}]]</a>
+                                            <div class="text-black-50 post-publishDate date-string mt-1 fs-14px fs-md-12px fw-400">
                                                 [[${recentPost.publishedDate}]]
                                             </div>
                                         </div>
@@ -67,7 +67,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3">
+                <div class="col-lg-3 col-md-4 px-5 p-md-0">
                     <div th:replace="~{fragments/sub-content :: content}"></div>
                 </div>
             </div>

@@ -90,3 +90,15 @@
   letter-spacing: 2px;
   text-transform: uppercase;
 }
+
+.signature {
+  width: 120px;
+  height: auto;
+}
+
+@media (max-width: 426px) {
+  .about-me {
+    margin-top: 2rem;
+    padding: 1rem;
+  }
+}

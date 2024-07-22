@@ -171,3 +171,22 @@
   }
 }
 
+@media (max-width: 768px) {
+  .logo {
+    height: 70px !important;
+  }
+  .main-menu {
+    padding: 12px;
+  }
+  .menu-item {
+    display: none !important;
+  }
+}
+@media (max-width: 426px) {
+  .social-menu {
+    display: none!important;
+  }
+  .logo {
+    height: 50px!important;
+  }
+}

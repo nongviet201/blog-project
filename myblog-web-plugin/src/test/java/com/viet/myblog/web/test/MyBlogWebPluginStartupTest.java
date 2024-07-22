@@ -1,4 +1,4 @@
-package com.viet.myblog.admin.test;
+package com.viet.myblog.web.test;
 
 import com.tvd12.ezyhttp.server.boot.EzyHttpApplicationBootstrap;
 import com.tvd12.ezyhttp.server.core.annotation.ComponentsScan;
@@ -11,11 +11,13 @@ import com.tvd12.ezyhttp.server.core.annotation.PropertiesSources;
 @ComponentsScan({
     "org.youngmonkeys.ezyplatform",
     "com.viet.myblog",
-    "org.youngmonkeys.ezyarticle"
+    "org.youngmonkeys.ezyarticle",
+    "org.youngmonkeys.ezysupport",
+    "org.youngmonkeys.ezymail"
 })
-public class BlogAdminPluginStartupTest {
+public class MyBlogWebPluginStartupTest {
 
     public static void main(String[] args) throws Exception {
-        EzyHttpApplicationBootstrap.start(BlogAdminPluginStartupTest.class);
+        EzyHttpApplicationBootstrap.start(MyBlogWebPluginStartupTest.class);
     }
 }

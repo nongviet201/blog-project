@@ -6,19 +6,19 @@
         <p class="sub-title">[[#{about_me}]]</p>
         <img src="https://themes-themegoods.b-cdn.net/letsblog/demo/wp-content/uploads/2015/07/photography_2.jpg" class="card-img-top" alt="...">
         <div class="card-body">
-            <p class="card-text">
+            <p class="card-text fs-md-14px fs-14px">
                 Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus.
             </p>
-            <img src="https://themes-themegoods.b-cdn.net/letsblog/demo/wp-content/uploads/2015/07/signature.png" alt="">
+            <img class="signature" src="https://themes-themegoods.b-cdn.net/letsblog/demo/wp-content/uploads/2015/07/signature.png" alt="">
         </div>
     </div>
 
     <div class="subscribe">
         <p class="sub-title" >[[#{subscribe_to_new_letter}]]</p>
-        <p class="mt-2">
+        <p class="mt-2 mb-sm-0">
             <input class="email-input" id="input-email" type="email" name="EMAIL" placeholder="Your email address" required="">
         </p>
-        <p>
+        <p class="mb-sm-0">
             <button class="email-subscribe-btn text-uppercase" type="button" value="Subscribe">[[#{subscribe}]]</button>
         </p>
     </div>
@@ -26,10 +26,11 @@
     <div class="social-sub-content">
         <div class="sub-title">[[#{follow_me_on}]]</div>
         <ul class="list-unstyled d-flex justify-content-center mt-3 mb-0">
-            <li class="me-3 fs-14px"><a href=""><i class="fa-brands text-black fa-facebook-f fa-lg"></i></a></li>
-            <li class="me-3 fs-14px"><a href=""><i class="fa-brands text-black fa-twitter fa-lg"></i></a></li>
-            <li class="me-3 fs-14px"><a href=""><i class="fa-brands text-black fa-tiktok fa-lg"></i></a></li>
-            <li class="fs-14px"><a href=""><i class="fa-brands text-black fa-instagram fa-lg"></i></a></li>
+            <li class="me-3 fs-lg-14px fs-md-14px" th:each="socialNetwork : ${socialNetworks}">
+                <a th:href="${socialNetwork.profileUrl}">
+                    <i th:classappend="${socialNetwork.webIcon}"></i>
+                </a>
+            </li>
         </ul>
     </div>
 

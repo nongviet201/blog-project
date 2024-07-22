@@ -5,18 +5,9 @@
 <div th:fragment="header" class="content">
     <header>
         <div class="main-menu">
-            <div class="social-menu ms-7">
-                <a>
-                    <i class="fa-brands fa-facebook-f"></i>
-                </a>
-                <a>
-                    <i class="fa-brands fa-twitter"></i>
-                </a>
-                <a>
-                    <i class="fa-brands fa-pinterest"></i>
-                </a>
-                <a>
-                    <i class="fa-brands fa-instagram"></i>
+            <div class="social-menu ms-lg-7">
+                <a th:each="socialNetwork : ${socialNetworks}" th:href="${socialNetwork.profileUrl}">
+                    <i th:classappend="${socialNetwork.webIcon}"></i>
                 </a>
             </div>
             <div>
@@ -25,7 +16,7 @@
                          src="https://themes-themegoods.b-cdn.net/letsblog/demo/wp-content/themes/letsblog/images/logo@2x.png">
                 </a>
             </div>
-            <div class="util-menu me-7">
+            <div class="util-menu me-lg-7">
                 <button class="ms-2 h-auto border-0 bg-white" type="button" data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                     <i class="fa-solid fa-magnifying-glass me-3"></i>
@@ -92,10 +83,11 @@
                 <div class="social-sub-content">
                     <div class="sub-title">[[#{follow_me_on}]]</div>
                     <ul class="list-unstyled d-flex justify-content-center mt-3 mb-0">
-                        <li class="me-3 fs-14px"><a href=""><i class="fa-brands text-black fa-facebook-f fa-lg"></i></a></li>
-                        <li class="me-3 fs-14px"><a href=""><i class="fa-brands text-black fa-twitter fa-lg"></i></a></li>
-                        <li class="me-3 fs-14px"><a href=""><i class="fa-brands text-black fa-tiktok fa-lg"></i></a></li>
-                        <li class="fs-14px"><a href=""><i class="fa-brands text-black fa-instagram fa-lg"></i></a></li>
+                        <li class="me-3 fs-14px" th:each="socialNetwork : ${socialNetworks}">
+                            <a th:href="${socialNetwork.profileUrl}">
+                                <i th:classappend="${socialNetwork.webIcon}"></i>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>

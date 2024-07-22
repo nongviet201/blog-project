@@ -6,30 +6,28 @@
         layout:decorate="~{ezytheme}">
 <body>
 <div layout:fragment="content" id="main-content">
-    <div class="custom-h1">
+    <div class="custom-h1 py-md-3 py-lg-4 py-sm-1">
         <h1>[[${termName}]]</h1>
     </div>
     <div class="container">
         <div class="row">
-            <th:block th:each="post, iterStat : ${postPagination.items}">
-                <div class="col-lg-4 mt-5 px-3">
-                    <div class="sub-post-index">
-                        <div>
-                            <a th:href="${'/post/' + post.slug}">
-                                <img class="mt-3" th:src="${post.image.getUrlOrNull()}" th:alt="${post.image.originalName}">
-                                <p class="post-title text-center mt-3">[[${post.title}]]</p>
-                            </a>
-                            <div class="post-date">
-                                                <span class="post-publishDate date-string">
-                                                    [[${post.publishedAt}]]
-                                                </span>
-                            </div>
+            <div class="col-lg-4 col-md-4 mt-5 px-3" th:each="post, iterStat : ${postPagination.items}">
+                <div class="sub-post-index">
+                    <div>
+                        <a th:href="${'/post/' + post.slug}">
+                            <img class="mt-3" th:src="${post.image.getUrlOrNull()}" th:alt="${post.image.originalName}">
+                            <p class="post-title text-center mt-3 fs-md-20px fs-sm-22px">[[${post.title}]]</p>
+                        </a>
+                        <div class="post-date">
+                            <span class="post-publishDate date-string fs-sm-12px">
+                                [[${post.publishedAt}]]
+                            </span>
                         </div>
-                        <div class="fs-14px mt-1" th:utext="${post.description}"></div>
-                        <a class="readmore mt-3" th:href="${'/post/' + post.slug}">[[#{read_more}]]</a>
                     </div>
+                    <div class="fs-14px fs-md-12px  mt-1" th:utext="${post.description}"></div>
+                    <a class="readmore fs-md-12px mt-3" th:href="${'/post/' + post.slug}">[[#{read_more}]]</a>
                 </div>
-            </th:block>
+            </div>
         </div>
     </div>
 </div>

@@ -3,9 +3,9 @@
   height: 640px;
   object-fit: cover;
 }
-@media (max-width: 576px) {
+@media (max-width: 426px) {
   .banner-wrapper img {
-    height: 320px;
+    height: 320px !important;
     object-fit: cover;
   }
 }

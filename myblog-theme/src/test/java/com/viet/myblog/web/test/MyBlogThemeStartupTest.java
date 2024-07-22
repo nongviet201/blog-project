@@ -11,11 +11,13 @@ import com.tvd12.ezyhttp.server.core.annotation.PropertiesSources;
 @ComponentsScan({
     "org.youngmonkeys.ezyplatform",
     "com.viet.myblog",
-    "org.youngmonkeys.ezyarticle"
+    "org.youngmonkeys.ezyarticle",
+    "org.youngmonkeys.ezysupport",
+    "org.youngmonkeys.ezymail"
 })
-public class BlogWebPluginStartupTest {
+public class MyBlogThemeStartupTest {
 
     public static void main(String[] args) throws Exception {
-        EzyHttpApplicationBootstrap.start(BlogWebPluginStartupTest.class);
+        EzyHttpApplicationBootstrap.start(MyBlogThemeStartupTest.class);
     }
 }

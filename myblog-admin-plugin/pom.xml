@@ -10,7 +10,7 @@
         <artifactId>myblog</artifactId>
                         
         
-        <version>1.0.0</version>
+        <version>1.0.2</version>
                     
     
     </parent>
@@ -55,7 +55,7 @@
             <groupId>com.viet</groupId>
                                     
             
-            <artifactId>blog-sdk</artifactId>
+            <artifactId>myblog-sdk</artifactId>
                                     
             
             <version>${project.version}</version>
@@ -280,6 +280,9 @@
                 
                     <resource>
                         <directory>${ezyplatform.home}/admin\plugins/ezysupport/resources</directory>
+                    </resource>
+                <resource>
+                        <directory>${ezyplatform.home}/admin\plugins/ezymail/resources</directory>
                     </resource>
                 </resources>
                                             

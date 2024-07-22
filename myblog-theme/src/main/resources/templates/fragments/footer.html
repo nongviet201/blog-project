@@ -3,15 +3,15 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <body>
 <footer th:class="mt-5" th:fragment="footer" class="content">
-    <div class="container">
+    <div class="container px-5">
         <div class="row">
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-6 col-12 mb-6 mb-md-0">
                 <a href="/">
                     <img class="logo"
                          src="https://themes-themegoods.b-cdn.net/letsblog/demo/wp-content/themes/letsblog/images/logo@2x_white.png">
                 </a>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-6 col-12 mb-6 mb-md-0">
                 <div class="subscription">
                     <p class="footer-title">[[#{subscription}]]</p>
                     <input class="email-input" id="input-email" type="email" name="EMAIL"
@@ -21,7 +21,7 @@
                     </button>
                 </div>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-6 col-12 mb-6 mb-md-0 mt-md-5 mt-lg-0">
                 <div>
                     <p class="footer-title">
                         [[#{recent_posts}]]
@@ -29,14 +29,16 @@
                     <div class="footer-item">
                         <ul>
                             <li class="footer-post-title mt-3" th:each="recentPost : ${recentPosts}">
-                                <a class="text-white" th:href="${'/post/' + recentPost.slug}">[[${recentPost.title}]]</a>
-                                <div class="text-white-50 post-publishDate date-string mt-1 fs-12px fw-400">[[${recentPost.publishedDate}]]</div>
+                                <a class="text-white fs-md-10px" th:href="${'/post/' + recentPost.slug}">[[${recentPost.title}]]</a>
+                                <div class="text-white-50 post-publishDate date-string mt-1 fs-lg-14px fs-md-12px fs-sm-12px  fw-400">
+                                    [[${recentPost.publishedDate}]]
+                                </div>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-6 col-12 mb-6 mb-md-0 mt-md-5 mt-lg-0">
                 <div>
                     <p class="footer-title">
                         [[#{popular-posts}]]
@@ -44,8 +46,10 @@
                     <div class="footer-item">
                         <ul>
                             <li class="footer-post-title mt-3" th:each="popularPost : ${popularPosts}">
-                                <a class="text-white" href="">[[${popularPost.title}]]</a>
-                                <div class="text-white-50 post-publishDate date-string mt-1 fs-14px fw-400">[[${popularPost.publishedDate}]]</div>
+                                <a class="text-white fs-md-10px" th:href="${'/post/' + popularPost.slug}">[[${popularPost.title}]]</a>
+                                <div class="text-white-50 post-publishDate date-string mt-1 fs-lg-14px fs-md-12px fs-sm-12px fw-400">
+                                    [[${popularPost.publishedDate}]]
+                                </div>
                             </li>
                         </ul>
                     </div>
