@@ -46,7 +46,7 @@ footer {
     letter-spacing: 2px;
 }
 
-footer .logo {
+.footer-logo {
     height: 100px;
 }
 
@@ -81,4 +81,10 @@ footer .subscription {
 
 .footer-post-title div{
     letter-spacing: 1px;
+}
+
+@media (max-width: 425px) {
+    .footer-logo {
+        height: 100px !important;
+    }
 }

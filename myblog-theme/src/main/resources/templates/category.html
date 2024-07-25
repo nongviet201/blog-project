@@ -11,7 +11,7 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 col-md-4 mt-5 px-3" th:each="post, iterStat : ${postPagination.items}">
+            <div class="col-lg-4 col-md-4 mt-5 px-5" th:each="post, iterStat : ${postPagination.items}">
                 <div class="sub-post-index">
                     <div>
                         <a th:href="${'/post/' + post.slug}">

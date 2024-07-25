@@ -40,15 +40,15 @@
                                         <div>
                                             <a th:href="${'/post/' + post.slug}">
                                                 <img class="mt-3" th:src="${post.image.getUrlOrNull()}" th:alt="${post.image.originalName}">
-                                                <p class="post-title fs-lg-20px text-center mt-3">[[${post.title}]]</p>
+                                                <p class="post-title fs-lg-20px fs-sm-18px text-center mt-3">[[${post.title}]]</p>
                                             </a>
                                             <div class="post-date">
-                                                <span class="post-publishDate fs-md-12px date-string">
+                                                <span class="post-publishDate fs-md-12px fs-sm-10px date-string">
                                                     [[${post.publishedAt}]]
                                                 </span>
                                             </div>
                                         </div>
-                                        <div class="fs-14px fs-md-12px fs-sm-14px mt-1" th:utext="${post.description}"></div>
+                                        <div class="fs-14px fs-md-12px fs-sm-12px mt-2" th:utext="${post.description}"></div>
                                         <a class="readmore fs-md-10px fs-sm-12px mt-3" th:href="${'/post/' + post.slug}">[[#{read_more}]]</a>
                                     </div>
                                 </div>
